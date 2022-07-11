@@ -1,32 +1,34 @@
-package org.springframework.boot.currencyexchangeservice;
+package org.springframework.boot.currencyconversionservice;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Entity
-public class CurrencyExchange {
-    @Id
+//@Entity
+public class CurrencyConversion {
+//    @Id
     private Long id;
 
-    @Column(name = "currency_from")
+//    @Column(name = "currency_from")
     private String from;
 
-    @Column(name = "currency_to")
+//    @Column(name = "currency_to")
     private String to;
 
+    private BigDecimal quantity;
     private BigDecimal conversionMultiple;
+    private BigDecimal totalCalculationAmount;
     private String environment;
 
-    public CurrencyExchange() {
+    public CurrencyConversion() {
     }
 
-    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple) {
+    public CurrencyConversion(Long id, String from, String to, BigDecimal quantity, BigDecimal conversionMultiple, BigDecimal totalCalculationAmount, String environment) {
         this.id = id;
         this.from = from;
         this.to = to;
+        this.quantity = quantity;
         this.conversionMultiple = conversionMultiple;
+        this.totalCalculationAmount = totalCalculationAmount;
+        this.environment = environment;
     }
 
     public Long getId() {
@@ -53,12 +55,28 @@ public class CurrencyExchange {
         this.to = to;
     }
 
+    public BigDecimal getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(BigDecimal quantity) {
+        this.quantity = quantity;
+    }
+
     public BigDecimal getConversionMultiple() {
         return conversionMultiple;
     }
 
     public void setConversionMultiple(BigDecimal conversionMultiple) {
         this.conversionMultiple = conversionMultiple;
+    }
+
+    public BigDecimal getTotalCalculationAmount() {
+        return totalCalculationAmount;
+    }
+
+    public void setTotalCalculationAmount(BigDecimal totalCalculationAmount) {
+        this.totalCalculationAmount = totalCalculationAmount;
     }
 
     public String getEnvironment() {

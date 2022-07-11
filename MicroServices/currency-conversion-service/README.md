@@ -1,23 +1,13 @@
 # udemy-In28Minutes-SpringBootCloud-MicroServices
 Based on the course at https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud
-https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/learn/lecture/24346992#overview
-This is the Microservices section - Currency exchange service
+This is the Microservices section - Currency conversion service (https://www.udemy.com/course/microservices-with-spring-boot-and-spring-cloud/learn/lecture/24346978#overview)
 
 The URL for the REST service will be something like:
-Currency exchange service
-=========================
-http://localhost:8000/currency-exchange/from/USD/to/INR
-amd
-http://localhost:8000/currency-exchange/from/USD/to/INR
-
 Currency conversion service
-http://localhost:8000/currency-exchange/from/USD/to/INR/quantiry/10
-
-H2 Console URL
-http://localhost:8000/h2-console
+=========================
+http://localhost:8100/currency-conversion/from/EUR/to/INR/quantity/19
 
 
-Run multiple instances but updating the run configurations and adding in the vm options the port number (-Dserver.port=8001)   
 
 The project was created by using https://start.spring.io/ and adding the following dependencies:
 
